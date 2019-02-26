@@ -1,0 +1,11 @@
+{
+ "argv": [
+   "/opt/conda/bin/pythonloc",
+   "-m",
+   "ipykernel_launcher",
+   "-f",
+   "{connection_file}"
+ ],
+ "display_name": "Python 3 (pythonloc)",
+ "language": "python"
+}
