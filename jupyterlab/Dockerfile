@@ -1,7 +1,8 @@
 FROM jupyter/scipy-notebook
 
 # Add ssh-client
-RUN apt-get update && \
+RUN mkdir -p /var/lib/apt/lists/partial && \
+  apt-get update && \
   apt-get install -y --no-install-recommends \
      openssh-client && \
   apt-get clean && \
