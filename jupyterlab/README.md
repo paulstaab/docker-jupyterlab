@@ -13,10 +13,10 @@ Extensions
   manage project dependencies in a reproducible way. TLDR: When using this kernel, install packages
   using the `piploc` command instead of `pip`. The packages will be use for all notebook in the
   current folder, and only for them.
-+ **spellcheck extension**: Extension for -- well -- spell checking in Notebooks.
-+ **run_notebook_background.sh**: Script to execute longrunning notebooks without the WebUI, which requires a constant connection.
++ **spellcheck extension**: Extension for spell checking in notebooks.
++ **run_notebook_background.sh**: Script to execute longrunning notebooks from terminal without 
+  a constant connection to the jupyter lab.
 
 Usage
 -----
 Use this container as you would [use the official Jupyter images](https://jupyter-docker-stacks.readthedocs.io/en/latest/).
-
