@@ -1,10 +1,12 @@
 FROM jupyter/scipy-notebook
 
-# Add ssh-client
+# Add ssh-client, vim and tmux
 USER root
 RUN apt-get update && \
   apt-get install -y --no-install-recommends \
-     openssh-client && \
+     openssh-client \
+     vim \
+     tmux && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/ && \
   rm -rf /tmp/downloaded_packages/ /tmp/*.rds 
