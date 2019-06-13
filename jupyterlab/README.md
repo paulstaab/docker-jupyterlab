@@ -13,6 +13,8 @@ Extensions
   manage project dependencies in a reproducible way. TLDR: When using this kernel, install packages
   using the `piploc` command instead of `pip`. The packages will be use for all notebook in the
   current folder, and only for them.
++ **spellcheck extension**: Extension for -- well -- spell checking in Notebooks.
++ **run_notebook_background.sh**: Script to execute longrunning notebooks without the WebUI, which requires a constant connection.
 
 Usage
 -----
