@@ -16,3 +16,7 @@ COPY ./pythonloc /opt/conda/share/jupyter/kernels/pythonloc/
 
 # Install support for spellchecking
 RUN jupyter labextension install @ijmbarr/jupyterlab_spellchecker
+
+# Add script to execute long-running notebooks
+COPY ./run_notebook_background.sh /usr/local/bin/
+
