@@ -1,5 +1,7 @@
-Jupyter Lab
-===========
+[![Build Status](https://travis-ci.org/paulstaab/docker-jupyterlab.svg?branch=master)](https://travis-ci.org/paulstaab/docker-jupyterlab)
+
+Extendend Jupyter Lab Image
+===========================
 
 Image: [**paulstaab/jupyterlab**](https://hub.docker.com/r/paulstaab/jupyterlab)
 
