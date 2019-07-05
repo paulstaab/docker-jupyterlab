@@ -15,7 +15,7 @@ Extensions
   current folder, and only for them.
 + **spellcheck extension**: Extension for spell checking in notebooks.
 + **run_notebook_background.sh**: Script to execute longrunning notebooks from terminal without 
-  a constant connection to the jupyter lab.
+  a client having a constant connection to the jupyter lab web-UI.
 
 Usage
 -----
