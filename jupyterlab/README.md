@@ -1,7 +1,7 @@
 Jupyter Lab
 ===========
 
-Image: **paulstaab/jupyterlab**
+Image: [**paulstaab/jupyterlab**](https://hub.docker.com/r/paulstaab/jupyterlab)
 
 This image is based on the [official Jupyter images](https://github.com/jupyter/docker-stacks)
 and includes some small extensions. I use it for data analysis and experiments with
