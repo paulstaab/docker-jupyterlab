@@ -1,0 +1,5 @@
+language: minimal
+services:
+  - docker
+script:
+  - cd jupyterlab && docker build -t  jupyterlab .
