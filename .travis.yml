@@ -1,9 +1,6 @@
 language: minimal
 services:
   - docker
-env:
-  - IMAGE=jupyterlab
-  - IMAGE=r-pkg-develop
 script:
-  - cd ${IMAGE} && docker build .
+  - docker build .
 
