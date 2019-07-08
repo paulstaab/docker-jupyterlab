@@ -19,10 +19,15 @@ COPY ./pythonloc /opt/conda/share/jupyter/kernels/pythonloc/
 # Install support for spellchecking
 RUN jupyter labextension install @ijmbarr/jupyterlab_spellchecker
 
-# Add SQL-Extension
+# Add SQL extension
 RUN pip install jupyterlab_sql && \
   jupyter serverextension enable jupyterlab_sql --py --sys-prefix && \
   jupyter lab build
+
+# Add git extension
+RUN jupyter labextension install @jupyterlab/git && \
+  pip install --upgrade jupyterlab-git && \
+  jupyter serverextension enable --py jupyterlab_git
 
 # Add system resource monitor to the status bar
 RUN jupyter labextension install jupyterlab-topbar-extension && \
