@@ -18,6 +18,7 @@ Extensions
 + [**spellcheck extension**](https://github.com/ijmbarr/jupyterlab_spellchecker): Extension for spell checking in notebooks.
 + **run_notebook_background.sh**: Script to execute longrunning notebooks from terminal without 
   a client having a constant connection to the jupyter lab web-UI.
++ [**git extension**](https://github.com/jupyterlab/jupyterlab-git): Extension for using git from the UI
 + [**sql extension**](https://github.com/pbugnion/jupyterlab-sql): Extension for interacting with relational DMBS
 + [**topbar extension**](https://github.com/jtpio/jupyterlab-topbar): Adds a system resource monitor to the top bar of jupyterlab
 
