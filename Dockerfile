@@ -29,11 +29,5 @@ RUN jupyter labextension install @jupyterlab/git && \
   pip install --upgrade jupyterlab-git && \
   jupyter serverextension enable --py jupyterlab_git
 
-# Add system resource monitor to the status bar
-RUN jupyter labextension install jupyterlab-topbar-extension && \
-  jupyter labextension install jupyterlab-system-monitor && \
-  jupyter labextension install jupyterlab-logout && \
-  pip install nbresuse
-
 # Add script to execute long-running notebooks
 COPY ./run_notebook_background.sh /usr/local/bin/
