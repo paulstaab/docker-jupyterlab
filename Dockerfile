@@ -17,6 +17,9 @@ USER $NB_UID
 RUN pip install pythonloc
 COPY ./pythonloc /opt/conda/share/jupyter/kernels/pythonloc/
 
+# Add tweak ipython default config
+COPY ./ipython_config.py /home/jovyan/.ipython/profile_default/
+
 # Install support for spellchecking
 RUN jupyter labextension install @ijmbarr/jupyterlab_spellchecker
 
