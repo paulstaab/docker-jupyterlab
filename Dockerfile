@@ -28,6 +28,10 @@ RUN pip install jupyterlab_sql && \
 RUN jupyter labextension install @jupyterlab/git && \
   pip install --upgrade jupyterlab-git && \
   jupyter serverextension enable --py jupyterlab_git
+  
+# Add black formatter extension
+RUN jupyter nbextension install https://github.com/drillan/jupyter-black/archive/master.zip && \
+  jupyter nbextension enable jupyter-black-master/jupyter-black
 
 # Add script to execute long-running notebooks
 COPY ./run_notebook_background.sh /usr/local/bin/
