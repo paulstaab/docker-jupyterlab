@@ -3,7 +3,7 @@ services:
   - docker
 before_script:
   - mkdir -p ~/docker-images
-  - bash -c '[[ -f ~/docker-images/jupyter.tgz ]] && docker load -i ~/docker-images/jupyter.tgz'
+  - bash -c '[[ ! -f ~/docker-images/jupyter.tgz ]] || docker load -i ~/docker-images/jupyter.tgz'
 script:
   - docker build -t jupyterlab .
   - docker run -d --rm -p 8888:8888 --user 1000 jupyterlab start.sh jupyter lab
