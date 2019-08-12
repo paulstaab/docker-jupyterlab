@@ -1,7 +1,15 @@
 language: minimal
 services:
   - docker
+before_script:
+  - mkdir -p ~/docker-images
+  - [[ -f ~/docker-images/jupyter.tgz ]] && docker load -i ~/docker-images/jupyter.tgz
 script:
   - docker build -t jupyterlab .
   - docker run -d --rm jupyterlab -p 8888:8888 --user 1000 start.sh jupyter lab
   - sleep 10 && curl localhost:8888
+before_cache:
+  - docker save jupyter/scipy-notebook | gzip -c > ~/docker-images/jupyter.tgz
+cache:
+  directories:
+    ~/docker-images 
