@@ -9,7 +9,7 @@ script:
   - docker run -d --rm -p 8888:8888 --user 1000 jupyterlab start.sh jupyter lab
   - sleep 10 && curl localhost:8888
 before_cache:
-  - docker save jupyter/scipy-notebook | gzip -c > ~/docker-images/jupyter.tgz
+  - docker save -o  ~/docker-images/jupyter.tgz jupyter/scipy-notebook
 cache:
   directories:
     ~/docker-images 
