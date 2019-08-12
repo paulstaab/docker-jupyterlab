@@ -2,5 +2,5 @@ language: minimal
 services:
   - docker
 script:
-  - docker build .
-
+  - docker build -t jupyterlab .
+  - docker run -d --rm jupyterlab -p 8888:8888 --user 1000 start.sh jupyter lab
