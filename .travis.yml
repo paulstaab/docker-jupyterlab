@@ -4,3 +4,4 @@ services:
 script:
   - docker build -t jupyterlab .
   - docker run -d --rm jupyterlab -p 8888:8888 --user 1000 start.sh jupyter lab
+  - sleep 10 && curl localhost:8888
