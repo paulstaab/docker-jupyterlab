@@ -18,7 +18,7 @@ RUN pip install pythonloc
 COPY ./pythonloc /opt/conda/share/jupyter/kernels/pythonloc/
 
 # Add tweak ipython default config
-COPY --chown=jovyan:users ./ipython_config.py /home/jovyan/.ipython/profile_default/
+COPY --chown=jovyan:users ./home /home/jovyan/
 
 # Install support for spellchecking
 RUN jupyter labextension install @ijmbarr/jupyterlab_spellchecker
