@@ -4,3 +4,4 @@ LICENSE
 docker-compose.test.yml
 .mergify.yml
 .travis.yml
+Makefile
