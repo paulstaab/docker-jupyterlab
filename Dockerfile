@@ -18,10 +18,10 @@ RUN pip install pythonloc
 COPY ./pythonloc /opt/conda/share/jupyter/kernels/pythonloc/
 
 # Install support for spellchecking
-RUN jupyter labextension install @ijmbarr/jupyterlab_spellchecker
+# RUN jupyter labextension install @ijmbarr/jupyterlab_spellchecker
 
 # Install go-to-definition extensions
-RUN jupyter labextension install @krassowski/jupyterlab_go_to_definition
+# RUN jupyter labextension install @krassowski/jupyterlab_go_to_definition
 
 # Add SQL extension
 # RUN pip install jupyterlab_sql && \
