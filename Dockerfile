@@ -23,9 +23,6 @@ COPY ./pythonloc /opt/conda/share/jupyter/kernels/pythonloc/
 # Install go-to-definition extensions
 # RUN jupyter labextension install @krassowski/jupyterlab_go_to_definition
 
-# Install go-to-definition extensions
-RUN jupyter labextension install @krassowski/jupyterlab_go_to_definition
-
 # Add SQL extension
 # RUN pip install jupyterlab_sql && \
 #  jupyter serverextension enable jupyterlab_sql --py --sys-prefix && \
