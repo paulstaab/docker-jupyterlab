@@ -11,6 +11,10 @@ RUN apt-get update && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/ && \
   rm -rf /tmp/downloaded_packages/ /tmp/*.rds 
+
+# Use vim as default editor
+RUN update-alternatives --set editor /usr/bin/vim.basic
+
 USER $NB_UID
 
 # Add kernel with pythonloc
@@ -35,7 +39,4 @@ COPY ./pythonloc /opt/conda/share/jupyter/kernels/pythonloc/
   
 # Add script to execute long-running notebooks
 COPY ./run_notebook_background.sh /usr/local/bin/
-
-# Use vim as default editor
-update-alternatives --set editor /usr/bin/vim.basic
 
