@@ -36,3 +36,6 @@ COPY ./pythonloc /opt/conda/share/jupyter/kernels/pythonloc/
 # Add script to execute long-running notebooks
 COPY ./run_notebook_background.sh /usr/local/bin/
 
+# Use vim as default editor
+update-alternatives --set editor /usr/bin/vim.basic
+
