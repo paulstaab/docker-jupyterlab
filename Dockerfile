@@ -7,6 +7,7 @@ RUN apt-get update && \
      htop \
      openssh-client \
      vim \
+     visidata && \
      tmux && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/ && \
