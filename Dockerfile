@@ -16,17 +16,26 @@ RUN apt-get update && \
 # Use vim as default editor
 RUN update-alternatives --set editor /usr/bin/vim.basic
 
+# Add script to execute long-running notebooks
+COPY ./run_notebook_background.sh /usr/local/bin/
+
 USER $NB_UID
 
 # Add kernel with pythonloc
-RUN pip install pythonloc
+RUN pip install pythonloc && \
+    fix-permissions $CONDA_DIR && \
+    fix-permissions /home/$NB_USER
 COPY ./pythonloc /opt/conda/share/jupyter/kernels/pythonloc/
 
 # Install support for spellchecking
-RUN jupyter labextension install @ijmbarr/jupyterlab_spellchecker
+RUN jupyter labextension install @ijmbarr/jupyterlab_spellchecker && \
+    fix-permissions $CONDA_DIR && \
+    fix-permissions /home/$NB_USER
 
 # Install go-to-definition extensions
-RUN jupyter labextension install @krassowski/jupyterlab_go_to_definition
+RUN jupyter labextension install @krassowski/jupyterlab_go_to_definition && \
+    fix-permissions $CONDA_DIR && \
+    fix-permissions /home/$NB_USER
 
 # Add SQL extension
 # RUN pip install jupyterlab_sql && \
@@ -34,10 +43,8 @@ RUN jupyter labextension install @krassowski/jupyterlab_go_to_definition
 #  jupyter lab build
 
 # Add git extension
-# RUN jupyter labextension install @jupyterlab/git && \
-#  pip install --upgrade jupyterlab-git && \
-#  jupyter serverextension enable --py jupyterlab_git
-  
-# Add script to execute long-running notebooks
-COPY ./run_notebook_background.sh /usr/local/bin/
-
+RUN jupyter labextension install @jupyterlab/git && \
+  pip install --upgrade jupyterlab-git && \
+  jupyter serverextension enable --py jupyterlab_git && \
+   fix-permissions $CONDA_DIR && \
+   fix-permissions /home/$NB_USER
